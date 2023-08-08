@@ -149,6 +149,9 @@ body {
     padding: 33px;
     border-radius: 30px;
   }
+  .title{
+    font-size: 50px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
