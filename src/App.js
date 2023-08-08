@@ -7,6 +7,7 @@ function App() {
   const [shadowPropertise, setshadowPropertise] = useState({
     x: "5",
     y: "5",
+    displayBox:"#A459D1",
     blur: "5",
     spread:"0"
   })
@@ -51,6 +52,21 @@ function App() {
             </div>
             <div className='colorPickerParent'>
               <div className="field" style={{width:"50%"}}>
+                <label htmlFor='box-color-in-hex' className='colorpicker'>Box Color (in hex)</label>
+                <input placeholder="Hex Code"  name='box-color-in-hex' className="input-field" value={shadowPropertise.displayBox} onChange={(e) => {
+                setshadowPropertise({...shadowPropertise,displayBox:e.target.value.toUpperCase()})
+              }} type="text" />
+              </div><span>Or</span>
+              <div className="field" style={{width:"30%"}}>
+                <label htmlFor='box-color-picker' className='colorpicker'>Pick your color</label>
+                <input placeholder="color picker" name='box-color-picker' value={shadowPropertise.displayBox} onChange={(e) => {
+                setshadowPropertise({...shadowPropertise,displayBox:e.target.value.toUpperCase()})
+              }} className="input-field" type="color" />
+
+              </div>
+            </div>
+            <div className='colorPickerParent'>
+              <div className="field" style={{width:"50%"}}>
                 <label htmlFor='color-in-hex' className='colorpicker'>Shadow Color (in hex)</label>
                 <input placeholder="Hex Code"  name='color-in-hex' className="input-field" value={colorPicker} onChange={(e) => setcolorPicker(e.target.value)} type="text" />
               </div><span>Or</span>
@@ -60,9 +76,8 @@ function App() {
 
               </div>
             </div>
-
           </div>
-          <div className='display' style={{boxShadow:`${shadowPropertise.x}px ${shadowPropertise.y}px ${shadowPropertise.blur}px ${shadowPropertise.spread}px ${colorPicker} ${shadowType==="offset"?"":shadowType}`}} ></div>
+          <div className='display' style={{boxShadow:`${shadowPropertise.x}px ${shadowPropertise.y}px ${shadowPropertise.blur}px ${shadowPropertise.spread}px ${colorPicker} ${shadowType==="offset"?"":shadowType}`,background:`${shadowPropertise.displayBox}`}} ></div>
         </div>
       </div>
 
