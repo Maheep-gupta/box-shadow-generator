@@ -82,24 +82,24 @@ function App() {
 
             </div>
             <div className='code'>
-              <p>
+              <code>
 
                 {
                   `box-shadow: ${shadowPropertise.x}px ${shadowPropertise.y}px ${shadowPropertise.blur}px ${shadowPropertise.spread}px ${colorPicker} ${shadowType === "offset" ? "" : shadowType}`
                 }
-              </p>
-              <p>
+              </code>
+              <code>
                 {
                   `-webkit-box-shadow: ${shadowPropertise.x}px ${shadowPropertise.y}px ${shadowPropertise.blur}px ${shadowPropertise.spread}px ${colorPicker} ${shadowType === "offset" ? "" : shadowType}`
                 }
 
 
-              </p>
-              <p>
+              </code>
+              <code>
                 {
                   `-webkit-box-shadow: ${shadowPropertise.x}px ${shadowPropertise.y}px ${shadowPropertise.blur}px ${shadowPropertise.spread}px ${colorPicker} ${shadowType === "offset" ? "" : shadowType}`
                 }
-              </p>
+              </code>
             </div>
           </div>
 
